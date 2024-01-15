@@ -87,3 +87,26 @@ function endQuiz() {
     finalScoreElement.textContent = timeLeft;
     questionsScreen.setAttribute("class", "hide");
   }
+
+  // Save score in local storage along with user's Initial
+
+function saveHighScore() {
+    let name = initialsInput.value.trim();
+    if (name !== "") {
+      let highScores =
+        JSON.parse(window.localStorage.getItem("highScores")) || [];
+      let newScore = {
+        score: timeLeft,
+        name: name
+      };
+      highScores.push(newScore);
+      window.localStorage.setItem("highScores", JSON.stringify(highScores));
+  
+       // Clear the initials input field after submitting initials
+       initialsInput.value = "";
+       
+      alert("Your Score has been Submitted");
+    }
+  }
+
+  
