@@ -78,3 +78,12 @@ function checkAnswer() {
       getQuestion();
     }
   }
+
+  // End quiz by hiding questions, Stop timer and show final score
+
+function endQuiz() {
+    clearInterval(timerInterval);
+    endScreen.removeAttribute("class");
+    finalScoreElement.textContent = timeLeft;
+    questionsScreen.setAttribute("class", "hide");
+  }
