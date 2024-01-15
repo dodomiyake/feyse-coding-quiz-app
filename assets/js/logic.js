@@ -15,3 +15,25 @@ var currentQuestionIndex = 0;
 var timeLeft = 60;
 var timerInterval;
 
+// Start quiz and hide content of main page and show Questions and Options
+
+function startQuiz() {
+    startScreen.classList.add("hide");
+    questionsScreen.classList.remove("hide");
+    startTimer();
+    getQuestion();
+  }
+
+  // Start timer and end quiz when time is less or equal to 0
+
+function startTimer() {
+    timerInterval = setInterval(function () {
+      timeLeft--;
+      timerElement.textContent = timeLeft;
+  
+      if (timeLeft <= 0) {
+        endQuiz();
+      }
+    }, 1000);
+  }
+  
