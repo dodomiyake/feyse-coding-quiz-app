@@ -39,6 +39,7 @@ function startTimer() {
 }
 
 // Loop through array of questions and Answers and create list with buttons
+
 function getQuestion() {
   let currentQuestion = questions[currentQuestionIndex];
   questionTitle.textContent = currentQuestion.question;
@@ -48,17 +49,51 @@ function getQuestion() {
     choiceBtn.setAttribute("value", choice);
     choiceBtn.textContent = i + 1 + ". " + choice;
     choiceBtn.onclick = checkAnswer;
+
+    // Add margin to create space between options
+    choiceBtn.style.marginBottom = "20px";
+
     choicesContainer.appendChild(choiceBtn);
   });
 }
 
+// function getQuestion() {
+//     let currentQuestion = questions[currentQuestionIndex];
+//     questionTitle.textContent = currentQuestion.question;
+//     choicesContainer.innerHTML = "";
+
+//     currentQuestion.options.forEach(function (choice, i) {
+//       let choiceLabel = document.createElement("label");
+//       let choiceRadio = document.createElement("input");
+//       choiceRadio.setAttribute("type", "radio");
+//       choiceRadio.setAttribute("name", "answer");
+//       choiceRadio.setAttribute("value", choice);
+//       choiceRadio.id = "option" + i;
+//       choiceRadio.onclick = checkAnswer;
+
+//       let choiceText = document.createTextNode(choice);
+
+//       choiceLabel.appendChild(choiceRadio);
+//       choiceLabel.appendChild(choiceText);
+
+//       // Add for attribute to associate label with radio button
+//       choiceLabel.setAttribute("for", "option" + i);
+
+//       // Apply inline styles
+//       choiceLabel.style.display = "block";
+//       choiceLabel.style.marginBottom = "25px"; // Adjust this value as needed
+
+//       // Set background color for the options
+//       choiceLabel.style.backgroundColor = "#e0e0e0"; // Replace with your desired color
+
+//       choicesContainer.appendChild(choiceLabel);
+//     });
+//   }
+
 // Create an audio element
 var correctAudioElement = new Audio("/assets/sfx/correct.wav");
 
-var wrongAudioElement = new Audio ("/assets/sfx/incorrect.wav");
-
-
-
+var wrongAudioElement = new Audio("/assets/sfx/incorrect.wav");
 
 // Check for right answers and deduct Time for wrong answer, go to next question
 
@@ -74,7 +109,7 @@ function checkAnswer() {
           ${questions[currentQuestionIndex].correctAnswer}.`;
     feedbackContainer.style.color = "red";
   } else {
-    correctAudioElement.play();;
+    correctAudioElement.play();
     feedbackContainer.textContent = "Correct!";
     feedbackContainer.style.color = "green";
   }
