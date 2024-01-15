@@ -14,13 +14,6 @@ var endScreen = document.querySelector("#end-screen");
 var currentQuestionIndex = 0;
 var timeLeft = 60;
 var timerInterval;
-var correctAudio = new Audio("../sfx/correct.wav");
-var wrongAudio = new Audio("../sfx/incorrect.wav");
-
-// Function to play audio
-function playAudio(audio) {
-  audio.play();
-}
 
 // Start quiz and hide content of main page and show Questions and Options
 
@@ -58,11 +51,24 @@ function getQuestion() {
   });
 }
 
+// Create an audio element
+var correctAudioElement = document.createElement("audio");
+correctAudioElement.setAttribute("src", "../sfx/correct.wav");
+
+var wrongAudioElement = document.createElement("audio");
+wrongAudioElement.setAttribute("src", "../sfx/incorrect.wav");
+
+// Function to play audio
+function playAudio(audioElement) {
+  audioElement.play();
+}
+
+
 // Check for right answers and deduct Time for wrong answer, go to next question
 
 function checkAnswer() {
   if (this.value !== questions[currentQuestionIndex].correctAnswer) {
-    playAudio(wrongAudio);
+    playAudio(wrongAudioElement);
     timeLeft -= 10;
     if (timeLeft < 0) {
       timeLeft = 0;
@@ -72,7 +78,7 @@ function checkAnswer() {
           ${questions[currentQuestionIndex].correctAnswer}.`;
     feedbackContainer.style.color = "red";
   } else {
-    playAudio(correctAudio);
+    playAudio(correctAudioElement);
     feedbackContainer.textContent = "Correct!";
     feedbackContainer.style.color = "green";
   }
@@ -114,6 +120,9 @@ function saveHighScore() {
     // Clear the initials input field after submitting initials
     initialsInput.value = "";
 
+    // Redirect to highscores page
+    window.location.href = "highscores.html";
+
     alert("Your Score has been Submitted");
   }
 }
@@ -121,17 +130,17 @@ function saveHighScore() {
 // Save user's score after pressing enter
 
 function saveScore(event) {
-    if (event.key === "Enter") {
-      saveHighScore();
-      alert("Your Score has been Submitted");
-    }
+  if (event.key === "Enter") {
+    saveHighScore();
+    alert("Your Score has been Submitted");
   }
-  initialsInput.onkeyup = saveScore;
-  
-  // Save users' score after clicking submit
-  
-  submitButton.onclick = saveHighScore;
-  
-  // Start quiz after clicking Start Quiz button
-  
-  startButton.onclick = startQuiz;
+}
+initialsInput.onkeyup = saveScore;
+
+// Save users' score after clicking submit
+
+submitButton.onclick = saveHighScore;
+
+// Start quiz after clicking Start Quiz button
+
+startButton.onclick = startQuiz;
