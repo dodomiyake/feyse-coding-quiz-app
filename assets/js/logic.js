@@ -33,6 +33,7 @@ function startTimer() {
 
     if (timeLeft <= 0) {
       endQuiz();
+      return;
     }
   }, 1000);
 }
@@ -52,23 +53,18 @@ function getQuestion() {
 }
 
 // Create an audio element
-var correctAudioElement = document.createElement("audio");
-correctAudioElement.setAttribute("src", "../sfx/correct.wav");
+var correctAudioElement = new Audio("/assets/sfx/correct.wav");
 
-var wrongAudioElement = document.createElement("audio");
-wrongAudioElement.setAttribute("src", "../sfx/incorrect.wav");
+var wrongAudioElement = new Audio ("/assets/sfx/incorrect.wav");
 
-// Function to play audio
-function playAudio(audioElement) {
-  audioElement.play();
-}
+
 
 
 // Check for right answers and deduct Time for wrong answer, go to next question
 
 function checkAnswer() {
   if (this.value !== questions[currentQuestionIndex].correctAnswer) {
-    playAudio(wrongAudioElement);
+    wrongAudioElement.play();
     timeLeft -= 10;
     if (timeLeft < 0) {
       timeLeft = 0;
@@ -78,14 +74,14 @@ function checkAnswer() {
           ${questions[currentQuestionIndex].correctAnswer}.`;
     feedbackContainer.style.color = "red";
   } else {
-    playAudio(correctAudioElement);
+    correctAudioElement.play();;
     feedbackContainer.textContent = "Correct!";
     feedbackContainer.style.color = "green";
   }
   feedbackContainer.setAttribute("class", "feedback");
   setTimeout(function () {
     feedbackContainer.setAttribute("class", "feedback hide");
-  }, 2000);
+  }, 500);
   currentQuestionIndex++;
   if (currentQuestionIndex === questions.length) {
     endQuiz();
