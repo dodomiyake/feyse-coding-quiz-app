@@ -58,8 +58,6 @@ If you'd like to contribute to the Coding Quiz App, follow these steps:
 
 ## Acknowledgments
 
-Special thanks to [Open Trivia Database](https://opentdb.com/) for providing coding-related quiz questions.
-
 Feel free to explore and customize the Coding Quiz App based on your project's needs.
 
 ## Contact
