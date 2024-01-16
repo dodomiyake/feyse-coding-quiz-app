@@ -1,10 +1,10 @@
-# Feyse Coding Quiz Challenge
+# Feyse Coding Quiz App
 
 Coding Quiz App is a web application that challenges users with coding-related questions. It's an interactive way for developers to test their programming knowledge.
 
 ## Table of Contents
 
-- [Feyse Coding Quiz Challenge](#feyse-coding-quiz-challenge)
+- [Feyse Coding Quiz App](#feyse-coding-quiz-app)
   - [Table of Contents](#table-of-contents)
   - [Features](#features)
   - [Demo](#demo)
