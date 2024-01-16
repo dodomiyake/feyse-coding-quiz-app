@@ -90,10 +90,10 @@ function getQuestion() {
 //     });
 //   }
 
-// Create an audio element
-var correctAudioElement = new Audio("/assets/sfx/correct.wav");
+// Creates a new audio element using the Audio constructor
+var correctAudioElement = new Audio("../../assets/sfx/correct.wav");
 
-var wrongAudioElement = new Audio("/assets/sfx/incorrect.wav");
+var wrongAudioElement = new Audio("../../assets/sfx/incorrect.wav");
 
 // Check for right answers and deduct Time for wrong answer, go to next question
 

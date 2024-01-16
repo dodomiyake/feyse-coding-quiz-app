@@ -1,17 +1,18 @@
 # Feyse Coding Quiz Challenge
 
-![Quiz App Logo](./images/quiz-logo.png)
-
 Coding Quiz App is a web application that challenges users with coding-related questions. It's an interactive way for developers to test their programming knowledge.
 
 ## Table of Contents
 
-- [Features](#features)
-- [Demo](#demo)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
+- [Feyse Coding Quiz Challenge](#feyse-coding-quiz-challenge)
+  - [Table of Contents](#table-of-contents)
+  - [Features](#features)
+  - [Demo](#demo)
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [Contributing](#contributing)
+  - [Acknowledgments](#acknowledgments)
+  - [Contact](#contact)
 
 ## Features
 
@@ -22,9 +23,9 @@ Coding Quiz App is a web application that challenges users with coding-related q
 
 ## Demo
 
-View a live demo of the Coding Quiz App [here](https://your-demo-url.com).
+View a live demo of the Coding Quiz App [here](https://dodomiyake.github.io/feyse-coding-quiz-challenge/).
 
-![Quiz App Screenshot](./images/quiz-screenshot.png)
+![Alt text](image.png)
 
 ## Installation
 
@@ -54,10 +55,6 @@ If you'd like to contribute to the Coding Quiz App, follow these steps:
 3. Make your changes and commit them: `git commit -m 'Add feature'`.
 4. Push to the branch: `git push origin feature-name`.
 5. Submit a pull request.
-
-## License
-
-This project is licensed under the [MIT License](LICENSE) - see the [LICENSE](LICENSE) file for details.
 
 ## Acknowledgments
 
