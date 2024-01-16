@@ -23,7 +23,7 @@ Coding Quiz App is a web application that challenges users with coding-related q
 
 ## Demo
 
-View a live demo of the Coding Quiz App [here](https://dodomiyake.github.io/feyse-coding-quiz-challenge/).
+View a live demo of the Coding Quiz App [here](https://dodomiyake.github.io/feyse-coding-quiz-app/).
 
 ![Alt text](image.png)
 
